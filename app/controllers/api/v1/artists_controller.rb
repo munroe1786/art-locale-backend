@@ -9,11 +9,21 @@ class Api::V1::ArtistsController < ApplicationController
     end
 
     def create
-        
+        @artist = Artist.new(artist_params)
+        if @artist.save
+            render json: @artist
+        else
+            render json: (error: 'Error creating Artist')
+        end
+
+        #if valid info is sent down to createa
+        #a new artist then we want to send back that
+        #artist to our front end
+        #if not, have an error message set up
     end
 
     def show
-
+        
     end
 
     def destroy
