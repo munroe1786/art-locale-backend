@@ -15,7 +15,12 @@ class Api::V1::MuseumsController < ApplicationController
 
     def create
         @museum = @artist.museum.build(museum_params)
-
+        if @museum
+            @museum.save
+            render json: @museum
+        else
+            render json (error: 'Error creating museum')
+        end
         #build automatically builds a museum for this artist
     
     end
