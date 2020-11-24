@@ -8,12 +8,16 @@ class Api::V1::MuseumsController < ApplicationController
        render json: @museums
     end
 
-    def create
-        
+    def show
+        @museum = Museum.find(params[:id])
+        render json: @museum
     end
 
-    def show
-        
+    def create
+        @museum = @artist.museum.build(museum_params)
+
+        #build automatically builds a museum for this artist
+    
     end
 
     def destroy
