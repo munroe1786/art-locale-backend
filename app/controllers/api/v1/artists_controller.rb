@@ -16,14 +16,14 @@ class Api::V1::ArtistsController < ApplicationController
             render json: (error: 'Error creating Artist')
         end
 
-        #if valid info is sent down to createa
+        #if valid info is sent down to create 
         #a new artist then we want to send back that
         #artist to our front end
         #if not, have an error message set up
     end
 
     def show
-        
+
     end
 
     def destroy
