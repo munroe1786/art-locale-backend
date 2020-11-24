@@ -1,0 +1,12 @@
+##Artist
+    has_many :museums
+    :name - string
+    :style - string
+
+
+##Museum
+    belongs_to :artist
+    :artist_id - integer
+    :name - string
+    :location - string
+    :description - string
