@@ -9,7 +9,7 @@ class Api::V1::ArtistsController < ApplicationController
     end
 
     def create
-
+        
     end
 
     def show
