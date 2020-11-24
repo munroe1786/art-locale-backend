@@ -23,12 +23,20 @@ class Api::V1::ArtistsController < ApplicationController
     end
 
     def show
-
+        @artist = Artist.find(params[:id])
+        render json: @artist
+        #params access the id # and find the account with that id
+        #request to ex: /api/v1/artist/1- params access the # and
+        #find the artist with that id
     end
 
     def destroy
-
+        @artist = Artist.find(params[:id])
+        @artist.destroy
     end
+
+    #can use before method to keep code DRY--
+    #repetitive in show and destroy
 
     private
 
