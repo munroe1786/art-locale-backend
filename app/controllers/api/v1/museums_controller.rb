@@ -4,6 +4,8 @@ class Api::V1::MuseumsController < ApplicationController
 
     def index
        #need index of museums associated with a certain artist
+       @museums = @artist.museums
+       render json: @museums
     end
 
     def create
@@ -26,7 +28,8 @@ class Api::V1::MuseumsController < ApplicationController
         #params is coming from the url with the artist ID in it
     end
 
-    #ex request to /api/v1/artists/1/museums
+    #example request to /api/v1/artists/1/museums
+    
     def museum_params
         params.require(:museum).permit(:artist_id, :name, :location, :description)
     end
