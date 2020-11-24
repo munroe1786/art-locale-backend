@@ -1,2 +1,2 @@
-class MuseumsController < ApplicationController
+class Api::V1::MuseumsController < ApplicationController
 end

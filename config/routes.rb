@@ -12,3 +12,5 @@ end
 #fetch(url) - normally - ('http://localhost:3000')
 
 #want to incorporate name spacing with api v1 included
+
+#fetch requests will need to match these namespaced routes
