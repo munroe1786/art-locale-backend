@@ -13,7 +13,7 @@ class Api::V1::ArtistsController < ApplicationController
         if @artist.save
             render json: @artist
         else
-            render json: (error: 'Error creating Artist')
+            render json: {error: 'Error creating Artist'}
         end
 
         #if valid info is sent down to create 

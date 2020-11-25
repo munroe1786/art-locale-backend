@@ -5,6 +5,8 @@
 
 # Read more: https://github.com/cyu/rack-cors
 
+#whatever server the frontend request comes from can have access to the db
+
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
    allow do     
     origins '*'
@@ -14,5 +16,3 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
        methods: [:get, :post, :put, :patch, :delete, :options, :head]
    end
  end
-
- #whatever server the frontend request comes from can have access to the db
