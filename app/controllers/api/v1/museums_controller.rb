@@ -14,12 +14,12 @@ class Api::V1::MuseumsController < ApplicationController
     end
 
     def create
-        @museum = @artist.museum.build(museum_params)
+        @museum = @artist.museums.build(museum_params)
         if @museum
             @museum.save
             render json: @museum
         else
-            render json (error: 'Error creating museum')
+            render json: {error: 'Error creating Museum'}
         end
         #build automatically builds a museum for this artist
     
@@ -42,5 +42,4 @@ class Api::V1::MuseumsController < ApplicationController
     def museum_params
         params.require(:museum).permit(:artist_id, :name, :location, :description)
     end
-
 end
