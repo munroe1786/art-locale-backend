@@ -26,7 +26,10 @@ class Api::V1::MuseumsController < ApplicationController
     end
 
     def destroy
-        
+        @museum = Museum.find(params["id"])
+        @artist = Artist.find(@museum.artist_id)
+        @museum.destroy
+        render json: @artist
     end
 
     private
