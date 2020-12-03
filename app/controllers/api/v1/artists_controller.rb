@@ -31,6 +31,14 @@ class Api::V1::ArtistsController < ApplicationController
         #find the artist with that id
     end
 
+    def update
+        #binding.pry
+        @artist = Artist.find(params[:id)
+        @artist.update(name: params["artist"]["name"])
+        @artist.save
+        render json: @artist
+    end
+
     def destroy
         @artist = Artist.find(params[:id])
         @artist.destroy
