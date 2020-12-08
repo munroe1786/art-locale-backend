@@ -3,13 +3,12 @@ class Api::V1::ArtistsController < ApplicationController
     def index
         @artists = Artist.all
         render json: @artists 
-        #saying - render these accounts as json
+        #render these accounts as json
         #render json: @artists - @artists is the response in our fetch requests
         #will be sent back to our front end after a fetch request is made into here
     end
 
     def create
-        #binding.pry
         @artist = Artist.new(artist_params)
         if @artist.save
             render json: @artist
@@ -26,13 +25,12 @@ class Api::V1::ArtistsController < ApplicationController
     def show
         @artist = Artist.find(params[:id])
         render json: @artist
-        #params access the id # and find the account with that id
-        #request to ex: /api/v1/artist/1- params access the # and
+        #params access the id # and find the artist with that id
+        #request to ex: /api/v1/artist/1 - params access the # and
         #find the artist with that id
     end
 
     def update
-        #binding.pry
         @artist = Artist.find(params[:id])
         @artist.update(name: params["artist"]["name"], style: params["artist"]["style"])
         @artist.save
@@ -40,8 +38,7 @@ class Api::V1::ArtistsController < ApplicationController
     end
 
     def destroy
-        #binding.pry
-        @artist = Artist.find(params["id"])
+        @artist = Artist.find(params[:id])
         @artist.destroy
         render json: @artist
     end
