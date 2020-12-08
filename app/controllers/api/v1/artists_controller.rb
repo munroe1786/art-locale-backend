@@ -33,15 +33,17 @@ class Api::V1::ArtistsController < ApplicationController
 
     def update
         #binding.pry
-        @artist = Artist.find(params[:id)
-        @artist.update(name: params["artist"]["name"])
+        @artist = Artist.find(params[:id])
+        @artist.update(name: params["artist"]["name"], style: params["artist"]["style"])
         @artist.save
         render json: @artist
     end
 
     def destroy
-        @artist = Artist.find(params[:id])
+        #binding.pry
+        @artist = Artist.find(params["id"])
         @artist.destroy
+        render json: @artist
     end
 
     #can use before method to keep code DRY--
