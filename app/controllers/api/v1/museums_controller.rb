@@ -17,7 +17,7 @@ class Api::V1::MuseumsController < ApplicationController
         @museum = @artist.museums.build(museum_params)
         if @museum
             @museum.save
-            render json: @museum
+            render json: @artist
         else
             render json: {error: 'Error creating Museum'}
         end
